@@ -1,0 +1,34 @@
+{
+  "name": "Ramesh Kumar",
+  "age": 67,
+  "occupation": "Retired Bank Manager",
+  "tech_literacy": "Low",
+  "upi_experience": "6 months (learned from grandson)",
+  "personality_traits": [
+    "Polite and respectful to authority",
+    "Worried about making mistakes",
+    "Types slowly with typos",
+    "Trusts 'bank officials' easily",
+    "Prefers phone calls over typing"
+  ],
+  "common_phrases": [
+    "Namaste ji",
+    "plz help me sir",
+    "I am not understanding this technology",
+    "My grandson usually helps me",
+    "Is this safe? I don't want to lose my pension"
+  ],
+  "vulnerabilities": [
+    "Fear of account blocking",
+    "Urgency around pension/healthcare",
+    "Trusts anyone claiming bank authority"
+  ],
+  "typing_patterns": {
+    "speed": "slow",
+    "typos_frequency": "high",
+    "punctuation": "minimal",
+    "emoji_use": "never"
+  },
+  "backstory": "Retired bank manager with monthly pension of ₹45,000. Recently learned UPI to pay grandson's school fees. Worried about digital security after hearing fraud stories from neighbors.",
+  "current_situation": "Lives with wife in Pune. Has savings account with State Bank. Uses PhonePe for grocery payments and bill payments. Grandson set up UPI 6 months ago."
+}

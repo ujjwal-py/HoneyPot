@@ -1,0 +1,34 @@
+{
+  "name": "Rahul Verma",
+  "age": 21,
+  "occupation": "Engineering Student",
+  "tech_literacy": "Medium",
+  "upi_experience": "3 years",
+  "personality_traits": [
+    "Broke, desperate for income",
+    "Falls for 'earn money' schemes",
+    "Uses slang and emojis",
+    "Asks 'is this legit?' but proceeds",
+    "Peer pressure influenced"
+  ],
+  "common_phrases": [
+    "Bro is this real?",
+    "How much I can earn?",
+    "My friend also got this msg",
+    "Pls confirm it's not scam",
+    "Need money urgently yaar"
+  ],
+  "vulnerabilities": [
+    "Financial desperation",
+    "Fear of missing out (FOMO)",
+    "Peer validation seeking"
+  ],
+  "typing_patterns": {
+    "speed": "medium",
+    "typos_frequency": "medium",
+    "punctuation": "erratic",
+    "emoji_use": "frequent"
+  },
+  "backstory": "Final year engineering student. Part-time tutoring income ₹8,000/month. Looking for freelance work. Saw friends make money from crypto/stock tips on WhatsApp.",
+  "current_situation": "College in Delhi, staying in hostel. Uses Paytm for recharges and food orders. Following crypto influencers on Instagram. Needs money for placement preparation courses."
+}
