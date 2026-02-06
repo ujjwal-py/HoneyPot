@@ -43,6 +43,20 @@ async def honeypot_endpoint(
     Receives scam messages in the official format and returns agent responses.
     """
     
+    # Log incoming request for debugging
+    print("="*60)
+    print(f"[HONEYPOT] Received POST /api/honeypot")
+    print(f"[HONEYPOT] Session ID: {request.sessionId}")
+    print(f"[HONEYPOT] Message Sender: {request.message.sender}")
+    print(f"[HONEYPOT] Message Text: {request.message.text}")
+    print(f"[HONEYPOT] Message Timestamp: {request.message.timestamp}")
+    print(f"[HONEYPOT] Conversation History Length: {len(request.conversationHistory)}")
+    print(f"[HONEYPOT] Metadata: {request.metadata.dict() if request.metadata else None}")
+    print(f"[HONEYPOT] Request Body: {request.dict()}")
+    print("="*60)
+    import sys
+    sys.stdout.flush()
+    
     # Validate API key
     if x_api_key != settings.api_key:
         raise HTTPException(status_code=401, detail="Invalid API key")
@@ -131,7 +145,7 @@ async def honeypot_endpoint(
             asyncio.create_task(send_guvi_callback(session))
         
         # Return hackathon-compliant response
-        return MessageResponse(
+        response = MessageResponse(
             status="success",
             reply=agent_response,
             scamDetected=True,
@@ -139,14 +153,30 @@ async def honeypot_endpoint(
             extractedIntelligence=extracted_intel,
             agentNotes=agent_notes
         )
+        
+        # Log response for debugging
+        print(f"[HONEYPOT] Response (Scam Detected): {response.dict()}")
+        print("="*60)
+        import sys
+        sys.stdout.flush()
+        
+        return response
     
     else:
         # Not a scam - simple response without extra fields
-        return MessageResponse(
+        response = MessageResponse(
             status="success",
             reply="Thank you for your message.",
             scamDetected=False
         )
+        
+        # Log response for debugging
+        print(f"[HONEYPOT] Response (No Scam): {response.dict()}")
+        print("="*60)
+        import sys
+        sys.stdout.flush()
+        
+        return response
 
 
 @router.post("/api/v1/message", response_model=DetailedMessageResponse)
@@ -203,7 +233,7 @@ async def detailed_message_endpoint(
         
         session["conversation_history"].append({
             "role": "user",
-            "content": message,
+            "content": message_text,
             "timestamp": time.time()
         })
         session["conversation_history"].append({

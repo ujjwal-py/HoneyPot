@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   honeypot:
     image: honeypot:latest
@@ -7,6 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: honeypot
+
+    environment:
+      - PYTHONUNBUFFERED=1
 
     env_file:
       - .env

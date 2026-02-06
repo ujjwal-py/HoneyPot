@@ -20,6 +20,7 @@ WORKDIR /app
 # Copy venv from builder
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
+ENV PYTHONUNBUFFERED=1
 
 # Copy app code
 COPY . .
